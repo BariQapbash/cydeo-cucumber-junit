@@ -24,6 +24,8 @@ public class GoogleStepDefinitions {
     public void user_types_and_clicks_enter(String searchKeyword) {
         googleSearchPage.searchBox.sendKeys(searchKeyword+Keys.ENTER);
     }
+
+
     @Then("user sees {word} in the google title")
     public void user_sees_in_the_google_title(String word) {
 
@@ -34,7 +36,6 @@ public class GoogleStepDefinitions {
         // Junit assertion accepts first arg as expected, second arg as actual
         //Assert.assertEquals(expectedTitle,actualTitle);
         //Assert.assertTrue(actualTile.equals(expectedTitle));
-
     }
 
 
