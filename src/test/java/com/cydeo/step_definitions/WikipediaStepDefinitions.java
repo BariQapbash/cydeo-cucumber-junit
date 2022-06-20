@@ -34,4 +34,9 @@ public class WikipediaStepDefinitions {
     public void userSeesIsInTheMainHeader(String arg0) {
         Assert.assertTrue(wikiSearchPage.mainHeader.getText().toLowerCase().contains(arg0.toLowerCase()));
     }
+
+    @Then("User sees {string} is in the image header")
+    public void userSeesIsInTheImageHeader(String arg2) {
+        Assert.assertTrue(wikiSearchPage.imageHeader.getText().toLowerCase().contains(arg2.toLowerCase()));
+    }
 }
