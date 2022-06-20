@@ -32,6 +32,7 @@ public class WikipediaStepDefinitions {
 
     @Then("User sees {string} is in the main header")
     public void userSeesIsInTheMainHeader(String arg0) {
+        Assert.assertTrue(wikiSearchPage.mainHeader.isDisplayed());
         Assert.assertTrue(wikiSearchPage.mainHeader.getText().toLowerCase().contains(arg0.toLowerCase()));
     }
 
