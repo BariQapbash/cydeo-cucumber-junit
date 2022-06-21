@@ -38,4 +38,10 @@ public class webTableStep_Definitions {
         BrowserUtils.verifyURLContains("orders");
     }
 
+    @When("user enters username {string} password {string} and Logins")
+    public void userEntersUsernamePasswordAndLogins(String username, String password) {
+        webTableLoginPage.inputUsername.sendKeys(username);
+        webTableLoginPage.inputPassword.sendKeys(password);
+        webTableLoginPage.loginButton.click();
+    }
 }
