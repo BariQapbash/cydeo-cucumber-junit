@@ -2,7 +2,11 @@ package com.cydeo.utilities;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class BrowserUtils {
@@ -68,6 +72,30 @@ for given duration
      */
     public static void verifyURLContains(String expectedInURL){
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedInURL));
+    }
+
+
+    /**
+     * THis method will accept a dropdown as a WebElement and return all  the options' text in a List of String .
+     * @param dropDownElement
+     * @return
+     */
+    public static List<String> dropDownOptionAsString(WebElement dropDownElement){
+
+        Select select = new Select(dropDownElement);
+
+        // List of all ACTUAL month <options> as a web element
+        List<WebElement> actualOptionAsWebElement = select.getOptions();
+
+        // List of all ACTUAL month <options> as a string
+        List<String> actualOptionAsString = new ArrayList<>();
+
+        for (WebElement each : actualOptionAsWebElement) {
+            actualOptionAsString.add(each.getText());
+        }
+
+        return actualOptionAsString;
+
     }
 
 
