@@ -3,13 +3,17 @@ package com.cydeo.step_definitions;
 import com.cydeo.pages.BasePage;
 import com.cydeo.pages.OrderPage;
 import com.cydeo.pages.WebTableLoginPage;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
 
 public class Order_StepDefinitions {
 
@@ -60,19 +64,19 @@ public class Order_StepDefinitions {
     }
     @When("user selects credit card type {string}")
     public void user_selects_credit_card_type(String string) {
-
+        BrowserUtils.clickRadioButton(orderPage.cardType,string);
     }
     @When("user enters credit card number {string}")
     public void user_enters_credit_card_number(String string) {
-
+        orderPage.cardNumber.sendKeys(string);
     }
     @When("user enters expiry date {string}")
     public void user_enters_expiry_date(String string) {
-
+        orderPage.expDate.sendKeys(string);
     }
     @When("user enters process order button")
     public void user_enters_process_order_button() {
-
+        orderPage.processOrderBtn.click();
     }
     @Then("user should see {string} in first row of the web table")
     public void user_should_see_in_first_row_of_the_web_table(String string) {
