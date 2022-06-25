@@ -30,16 +30,16 @@ Feature: Web table user order feature
     And user enters credit card number "<cardNumber>"
     And user enters expiry date "<expDate>"
     And user enters process order button
-    Then user should see "<customerName>" in first row of the web table
-@maleScientists
+    Then user should see "<expectedName>" in first row of the web table
+    @maleScientists
     Examples: Famous female scientists
-      | productType | quantity | customerName      | street    | city   | state   | zipCode | cardType   | cardNumber       | expDate |
-      | MoneyCog    | 2        | Marie Curie       | London st | London | England | 50505   | Visa       | 6501445510102251 | 12/26   |
-      | MoneyCog    | 4        | Filora Halmurat   | Via Bach  | Padua  | Italy   | 35132   | MasterCard | 6501445510102251 | 12/26   |
-      | MoneyCog    | 6        | Sultangul Ablimit | London st | London | England | 50505   | Visa       | 6501445510102251 | 12/26   |
+      | productType | quantity | customerName      | street    | city   | state   | zipCode | cardType   | cardNumber       | expDate | expectedName      |
+      | MoneyCog    | 2        | Marie Curie      | London st | London | England | 50505   | Visa       | 6501445510102251 | 12/26   | Marie Curie       |
+      | MoneyCog    | 4        | Filora Halmurat   | Via Bach  | Padua  | Italy   | 35132   | MasterCard | 6501445510102251 | 12/26   | Filora Halmurat   |
+      | MoneyCog    | 6        | Sultangul Ablimit | London st | London | England | 50505   | Visa       | 6501445510102251 | 12/26   | Sultangul Ablimit |
 
     Examples: Famous male scientists
-      | productType | quantity | customerName      | street    | city   | state   | zipCode | cardType   | cardNumber       | expDate |
-      | MoneyCog    | 2        | Mehmud Qeshghri       | London st | London | England | 50505   | Visa       | 6501445510102251 | 12/26   |
-      | MoneyCog    | 4        | Emir Temur   | Via Bach  | Padua  | Italy   | 35132   | MasterCard | 6501445510102251 | 12/26   |
-      | MoneyCog    | 6        | Yusuf Has Hajip | London st | London | England | 50505   | Visa       | 6501445510102251 | 12/26   |
+      | productType | quantity | customerName    | street    | city   | state   | zipCode | cardType   | cardNumber       | expDate |expectedName      |
+      | MoneyCog    | 2        | Mehmud Qeshghri | London st | London | England | 50505   | Visa       | 6501445510102251 | 12/26   |Mehmud Qeshghri   |
+      | MoneyCog    | 4        | Emir Temur      | Via Bach  | Padua  | Italy   | 35132   | MasterCard | 6501445510102251 | 12/26   |Emir Temur        |
+      | MoneyCog    | 6        | Yusuf Has Hajip | London st | London | England | 50505   | Visa       | 6501445510102251 | 12/26   |Yusuf Has Hajip   |
